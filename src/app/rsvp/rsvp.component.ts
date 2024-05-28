@@ -16,7 +16,10 @@ export class RsvpComponent {
     textForRsvp: new FormControl( '' ),
   } );
 
+  showedWord?: string;
+
   showRsvp (): void {
+    this.showedWord = 'hola';
 
     console.log( 'showRsvp', this.form );
 
