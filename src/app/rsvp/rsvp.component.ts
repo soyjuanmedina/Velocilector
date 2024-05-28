@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 @Component( {
   selector: 'app-rsvp',
   standalone: true,
-  imports: [
+  imports: [FormsModule,
     ReactiveFormsModule],
   templateUrl: './rsvp.component.html',
   styleUrl: './rsvp.component.scss'
@@ -13,12 +13,12 @@ import { BrowserModule } from '@angular/platform-browser';
 export class RsvpComponent {
 
   form: FormGroup = new FormGroup( {
-    text: new FormControl( '' ),
+    textForRsvp: new FormControl( '' ),
   } );
 
   showRsvp (): void {
 
-    console.log( 'showRsvp', );
+    console.log( 'showRsvp', this.form );
 
   }
 }
