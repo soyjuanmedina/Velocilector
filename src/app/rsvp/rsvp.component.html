@@ -1,3 +1,29 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <div class="row">
+        <div class="col-sm">
+          <div class="d-flex flex-row-reverse">
+            <button class="btn btn-primary btn-sm m-1" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Configuración <i class="bi bi-gear-fill" title="Configuración"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <label for="customRange2" class="form-label">Pálabras por minúto: {{wpm}}</label>
+        <input type="range" class="form-range" [(ngModel)]="wpm" min="60" max="1000"
+          id="customRange2">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <form [formGroup]="form">
 
   <div class=" mb-3 text-center mt-5">
@@ -17,12 +43,11 @@
   aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
-      <div class="modal-body">
-        <h1 class="text-center mt-5">{{showedWord}}</h1>
+      <div class="modal-body centerScreen">
+        <h1 class="text-center">{{showedWord}}</h1>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

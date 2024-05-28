@@ -18,10 +18,30 @@ export class RsvpComponent {
 
   showedWord?: string;
 
-  showRsvp (): void {
-    this.showedWord = 'hola';
+  wpm: number = 500;
 
-    console.log( 'showRsvp', this.form );
+  delay = ( ms: number | undefined ) => new Promise( res => setTimeout( res, ms ) );
 
+  async showRsvp (): Promise<void> {
+    this.showedWord = "";
+    const split = this.form.controls['textForRsvp'].value.split( ' ' )
+    let time = 60 / this.wpm * 1000
+    this.playRsvp( split, time );
+  }
+
+  async playRsvp ( split: string[], time: number ) {
+    const start = new Date();
+    await this.sleep( 1000 );
+    for ( let i = 0; i <= split.length; i++ ) {
+      await this.sleep( time );
+      this.showedWord = split[i]
+    }
+    const end = new Date();
+    const milisegundos = end.getTime() - start.getTime();
+    this.showedWord = "Se han reproducido " + split.length + " palabras en " + milisegundos + " milisegundos";
+  }
+
+  sleep ( ms: number ) {
+    return new Promise( resolve => setTimeout( resolve, ms ) );
   }
 }
