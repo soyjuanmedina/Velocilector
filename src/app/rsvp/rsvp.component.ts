@@ -37,8 +37,8 @@ export class RsvpComponent {
       this.showedWord = split[i]
     }
     const end = new Date();
-    const milisegundos = end.getTime() - start.getTime();
-    this.showedWord = "Se han reproducido " + split.length + " palabras en " + milisegundos + " milisegundos";
+    const segundos = ( end.getTime() - start.getTime() ) / 1000;
+    this.showedWord = "Se han reproducido " + split.length + " palabras en " + segundos + " milisegundos";
   }
 
   sleep ( ms: number ) {
