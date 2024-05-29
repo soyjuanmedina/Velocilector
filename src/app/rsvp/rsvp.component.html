@@ -1,37 +1,74 @@
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <div class="accordion-header">
-      <div class="row">
-        <div class="col-sm">
-          <div class="d-flex flex-row-reverse">
-            <button class="btn btn-primary btn-sm m-1" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Configuración <i class="bi bi-gear-fill" title="Configuración"></i>
-            </button>
+<div class="row">
+
+  <div class="col-sm text-start">
+
+    <div class="accordion" id="firstAccordion">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="row">
+            <div class="col-sm">
+              <button class="btn btn-primary btn-sm m-1" type="button" data-bs-toggle="collapse"
+                data-bs-target="#howWorks" aria-expanded="true" aria-controls="howWorks">
+                <i class="bi bi-question-circle-fill" title="¿Cómo funciona?"></i> ¿Cómo funciona?
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="howWorks" class="accordion-collapse collapse" data-bs-parent="#firstAccordion">
+          <div class="accordion-body">
+            <p>Pega el texto que quieras leer en la caja adjunta y
+              pulsa el botón 'Velocileer'. Después de un segundo el texto comenzará a mostrarse ante
+              tus ojos palabra
+              a palabra y comprobarás como puedes leerlo mucho más rápido que en la lectura
+              convencional
+            </p>
+            <p>Por defecto la aplicación muestra las palabras a una cadencia de 500 por minuto, pero
+              puedes aumentar o disminuir
+              la velocidad desde el deslizador que se muestra al pulsar en 'Configuración'
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <label for="customRange2" class="form-label">Pálabras por minúto: {{wpm}}</label>
-        <input type="range" class="form-range" [(ngModel)]="wpm" min="60" max="1000"
-          id="customRange2">
+  </div>
+  <div class="col-sm">
+    <div class="accordion" id="secondAccordion">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="row">
+            <div class="col-sm">
+              <div class="d-flex flex-row-reverse">
+                <button class="btn btn-primary btn-sm m-1" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#configuration" aria-expanded="true"
+                  aria-controls="configuration">
+                  Configuración <i class="bi bi-gear-fill" title="Configuración"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="configuration" class="accordion-collapse collapse"
+          data-bs-parent="#secondAccordion">
+          <div class="accordion-body">
+            <label for="customRange2" class="form-label">Pálabras por minúto: {{wpm}}</label>
+            <input type="range" class="form-range" [(ngModel)]="wpm" min="60" max="2000"
+              id="customRange2">
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
-
-
 
 <form [formGroup]="form">
 
   <div class=" mb-3 text-center mt-5">
-    <label for="textForRsvp" class="form-label">Texto para RSVP</label>
+    <label for="textForRsvp" class="form-label">Texto</label>
     <textarea class="form-control" id="textForRsvp" rows="10"
       formControlName="textForRsvp"></textarea>
     <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
-      data-bs-target="#RSVPModal" (click)="showRsvp()">RSVP</button>
+      data-bs-target="#RSVPModal" (click)="showRsvp()">Velocileer</button>
   </div>
 
 </form>
