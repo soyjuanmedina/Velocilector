@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { testTexts } from './conf/test-text';
 
 @Component( {
   selector: 'app-rsvp',
@@ -23,8 +24,9 @@ export class RsvpComponent {
   delay = ( ms: number | undefined ) => new Promise( res => setTimeout( res, ms ) );
 
   async showRsvp (): Promise<void> {
+    let text = this.form.controls['textForRsvp'].value.replace( /(\r\n|\n|\r)/gm, " " );
     this.showedWord = "";
-    const split = this.form.controls['textForRsvp'].value.split( ' ' )
+    const split = text.split( ' ' )
     let time = 60 / this.wpm * 1000
     this.playRsvp( split, time );
   }
@@ -43,5 +45,10 @@ export class RsvpComponent {
 
   sleep ( ms: number ) {
     return new Promise( resolve => setTimeout( resolve, ms ) );
+  }
+
+  loadTestText () {
+    this.form.controls['textForRsvp'].setValue( testTexts[0] )
+
   }
 }
