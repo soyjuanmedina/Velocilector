@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { testTexts } from './conf/test-text';
+import { CommonModule } from '@angular/common';
 
 @Component( {
   selector: 'app-rsvp',
   standalone: true,
   imports: [FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule, CommonModule],
   templateUrl: './rsvp.component.html',
   styleUrl: './rsvp.component.scss'
 } )
@@ -18,8 +19,8 @@ export class RsvpComponent {
   } );
 
   showedWord?: string;
-
   wpm: number = 500;
+  fontSize: number = 5;
 
   delay = ( ms: number | undefined ) => new Promise( res => setTimeout( res, ms ) );
 

@@ -1,15 +1,9 @@
+$font-size: var(--font-size);
+
 .centerScreen{
 align-content: center
 }
 
-.accordion-button {
-  background:transparent;
-}
-
-.accordion-button:focus {
-    box-shadow: red;
-}
-
-.accordion-item {
-    border: none;
+.rsvpTextSize {
+    font-size: $font-size;
 }
