@@ -1,7 +1,25 @@
-export let testTexts: string[] = [
-  ` 
-  Vuelva usted mañana por Mariano José de Larra.
-  Gran persona debió de ser el primero que llamó pecado mortal a la pereza; nosotros, que ya en uno de nuestros artículos anteriores estuvimos más serios de lo que nunca nos habíamos propuesto, no entraremos ahora en largas y profundas investigaciones acerca de la historia de este pecado, por más que conozcamos que hay pecados que pican en historia, y que la historia de los pecados sería un tanto cuanto divertida. Convengamos solamente en que esta institución ha cerrado y cerrará las puertas del cielo a más de un cristiano.
+export let testTexts = [
+  {
+    "title": "El otro yo",
+    "author": "Mario Benedetti",
+    "text": `EL OTRO YO, un cuento de Mario Benedetti
+Se trataba de un muchacho corriente: en los pantalones se le formaban rodilleras, leía historietas, hacía ruido cuando comía, se metía los dedos a la nariz, roncaba en la siesta, se llamaba Armando Corriente en todo menos en una cosa: tenía Otro Yo.
+El Otro Yo usaba cierta poesía en la mirada, se enamoraba de las actrices, mentía cautelosamente , se emocionaba en los atardeceres. Al muchacho le preocupaba mucho su Otro Yo y le hacía sentirse incómodo frente a sus amigos. Por otra parte el Otro Yo era melancólico, y debido a ello, Armando no podía ser tan vulgar como era su deseo.
+Una tarde Armando llegó cansado del trabajo, se quitó los zapatos, movió lentamente los dedos de los pies y encendió la radio. En la radio estaba Mozart, pero el muchacho se durmió. Cuando despertó el Otro Yo lloraba con desconsuelo. En el primer momento, el muchacho no supo que hacer, pero después se rehizo e insultó concienzudamente al Otro Yo. Este no dijo nada, pero a la mañana siguiente se había suicidado.
+
+
+Al principio la muerte del Otro Yo fue un rudo golpe para el pobre Armando, pero enseguida pensó que ahora sí podría ser enteramente vulgar. Ese pensamiento lo reconfortó.
+
+Sólo llevaba cinco días de luto, cuando salió la calle con el propósito de lucir su nueva y completa vulgaridad. Desde lejos vio que se acercaban sus amigos. Eso le llenó de felicidad e inmediatamente estalló en risotadas. Sin embargo, cuando pasaron junto a él, ellos no notaron su presencia. Para peor de males, el muchacho alcanzó a escuchar que comentaban: «Pobre Armando. Y pensar que parecía tan fuerte y saludable».
+El muchacho no tuvo más remedio que dejar de reír y, al mismo tiempo, sintió a la altura del esternón un ahogo que se parecía bastante a la nostalgia. Pero no pudo sentir auténtica melancolía, porque toda la melancolía se la había llevado el Otro Yo.
+  `},
+
+  {
+    "title": "Vuelva usted mañana",
+    "author": "Mariano José de Larra",
+    "text":
+      `Vuelva usted mañana por Mariano José de Larra.
+Gran persona debió de ser el primero que llamó pecado mortal a la pereza; nosotros, que ya en uno de nuestros artículos anteriores estuvimos más serios de lo que nunca nos habíamos propuesto, no entraremos ahora en largas y profundas investigaciones acerca de la historia de este pecado, por más que conozcamos que hay pecados que pican en historia, y que la historia de los pecados sería un tanto cuanto divertida. Convengamos solamente en que esta institución ha cerrado y cerrará las puertas del cielo a más de un cristiano.
 
 Estas reflexiones hacía yo casualmente no hace muchos días, cuando se presentó en mi casa un extranjero de estos que, en buena o en mala parte, han de tener siempre de nuestro país una idea exagerada e hiperbólica, de estos que, o creen que los hombres aquí son todavía los espléndidos, francos, generosos y caballerescos seres de hace dos siglos, o que son aún las tribus nómadas del otro lado del Atlante: en el primer caso vienen imaginando que nuestro carácter se conserva intacto como nuestra ruina; en el segundo vienen temblando por esos caminos, y pregunta si son los ladrones que los han de despojar los individuos de algún cuerpo de guardia establecido precisamente para defenderlos de los azares de un camino, comunes a todos los países.
 
@@ -170,5 +188,5 @@ Era cosa de ver la cara de mi amigo al oír lo del memorialito: representábasel
 Aturdíase mi amigo cada vez más, y cada vez nos comprendía menos. Días y días tardamos en ver las pocas rarezas que tenemos guardadas. Finalmente, después de medio año largo, si es que puede haber un medio año más largo que otro, se restituyó mi recomendado a su patria maldiciendo de esta tierra, y dándome la razón que yo ya antes me tenía, y llevando al extranjero noticias excelentes de nuestras costumbres; diciendo sobre todo que en seis meses no había podido hacer otra cosa sino «volver siempre mañana», y que a la vuelta de tanto «mañana», eternamente futuro, lo mejor, o más bien lo único que había podido hacer bueno, había sido marcharse.
 
 ¿Tendrá razón, perezoso lector (si es que has llegado ya a esto que estoy escribiendo), tendrá razón el buen monsieur Sans-délai en hablar mal de nosotros y de nuestra pereza? ¿Será cosa de que vuelva el día de mañana con gusto a visitar nuestros hogares? Dejemos esta cuestión para mañana, porque ya estarás cansado de leer hoy: si mañana u otro día no tienes, como sueles, pereza de volver a la librería, pereza de sacar tu bolsillo, y pereza de abrir los ojos para hojear las hojas que tengo que darte todavía, te contaré cómo a mí mismo, que todo esto veo y conozco y callo mucho más, me ha sucedido muchas veces, llevado de esta influencia, hija del clima y de otras causas, perder de pereza más de una conquista amorosa; abandonar más de una pretensión empezada, y las esperanzas de más de un empleo, que me hubiera sido acaso, con más actividad, poco menos que asequible; renunciar, en fin, por pereza de hacer una visita justa o necesaria, a relaciones sociales que hubieran podido valerme de mucho en el transcurso de mi vida; te confesaré que no hay negocio que no pueda hacer hoy que no deje para mañana; te referiré que me levanto a las once, y duermo siesta; que paso haciendo el quinto pie de la mesa de un café, hablando o roncando, como buen español, las siete y las ocho horas seguidas; te añadiré que cuando cierran el café, me arrastro lentamente a mi tertulia diaria (porque de pereza no tengo más que una), y un cigarrito tras otro me alcanzan clavado en un sitial, y bostezando sin cesar, las doce o la una de la madrugada; que muchas noches no ceno de pereza, y de pereza no me acuesto; en fin, lector de mi alma, te declararé que de tantas veces como estuve en esta vida desesperado, ninguna me ahorqué y siempre fue de pereza. Y concluyo por hoy confesándote que ha más de tres meses que tengo, como la primera entre mis apuntaciones, el título de este artículo, que llamé «Vuelva usted mañana»; que todas las noches y muchas tardes he querido durante ese tiempo escribir algo en él, y todas las noches apagaba mi luz diciéndome a mí mismo con la más pueril credulidad en mis propias resoluciones: «¡Eh!, ¡mañana le escribiré!». Da gracias a que llegó por fin este mañana que no es del todo malo: pero ¡ay de aquel mañana que no ha de llegar jamás!
-`
+`}
 ]

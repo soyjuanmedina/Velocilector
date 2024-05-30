@@ -1,12 +1,15 @@
-<p>Pega el texto que quieras leer en la caja adjunta y
+<p>Pega el texto que quieras leer en el cuadro de texto y
   pulsa el botón 'Velocileer'. Después de un segundo el texto comenzará a mostrarse ante
   tus ojos palabra
   a palabra y comprobarás como puedes leerlo mucho más rápido que en la lectura
   convencional
 </p>
-<p>Por defecto la aplicación muestra las palabras a una cadencia de 500 por minuto, pero
+<p>Por defecto la aplicación muestra las palabras a una cadencia de 500 por minuto y a un tamaño de
+  5vw,
+  pero
   puedes aumentar o disminuir
-  la velocidad desde el deslizador que se muestra al pulsar en 'Configuración'
+  estos valores desde los deslizadores superiores
 </p>
 
-<p class="text-end"><button type="button" class="btn btn-primary">Volver</button></p>
+<p class="text-end"><button type="button" class="btn btn-primary" [routerLink]="['/']"
+    [skipLocationChange]="true">Volver</button></p>
