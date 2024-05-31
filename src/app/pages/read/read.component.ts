@@ -1,40 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { testTexts } from '../home/conf/test-text';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { testTexts } from './conf/test-text';
 import { CommonModule } from '@angular/common';
+import { ReadService } from '../../services/read.service';
 
 @Component( {
-  selector: 'app-rsvp',
+  selector: 'app-read',
   standalone: true,
   imports: [FormsModule,
     ReactiveFormsModule, CommonModule],
-  templateUrl: './rsvp.component.html',
-  styleUrl: './rsvp.component.scss'
+  templateUrl: './read.component.html',
+  styleUrl: './read.component.scss'
 } )
-export class RsvpComponent {
+export class ReadComponent implements OnInit {
 
   form: FormGroup = new FormGroup( {
-    textForRsvp: new FormControl( '' ),
+    textToRead: new FormControl( '' ),
   } );
 
   showedWord?: string;
-  wpm: number = 500;
-  fontSize: number = 5;
   pause: boolean = false;
   modalClosed: boolean = false;
   testTexts = testTexts;
 
-  delay = ( ms: number | undefined ) => new Promise( res => setTimeout( res, ms ) );
+  constructor ( public router: Router, public readService: ReadService ) {
+  }
+  ngOnInit (): void {
+    this.read();
+  }
 
-  async showRsvp (): Promise<void> {
+  return () {
+    this.router.navigate( ['/'], { skipLocationChange: true } );
+  }
+
+  async read (): Promise<void> {
     this.showedWord = "";
-    let text = this.form.controls['textForRsvp'].value.replace( /(\r\n|\n|\r)/gm, " " );
+    let text = this.readService.textToRead.replace( /(\r\n|\n|\r)/gm, " " );
     if ( !text ) {
       this.showedWord = "Por favor, introduce el texto que quieras leer en el cuadro de texto";
     } else {
       const split = text.split( ' ' )
-      let time = 60 / this.wpm * 1000
+      let time = 60 / this.readService.wpm * 1000
       this.playRsvp( split, time );
     }
 
@@ -67,7 +74,7 @@ export class RsvpComponent {
   }
 
   loadTestText ( index: number ) {
-    this.form.controls['textForRsvp'].setValue( testTexts[index].text )
+    this.form.controls['textToRead'].setValue( testTexts[index].text )
 
   }
 
@@ -78,6 +85,5 @@ export class RsvpComponent {
   closeModal () {
     this.modalClosed = true;
   }
-
 
 }

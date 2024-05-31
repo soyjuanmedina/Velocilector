@@ -2,6 +2,7 @@
   <div class="container">
     <a class="navbar-brand" href="#"><img src="assets/img/velocilector-logo.png"
         style="max-width: 264px;" alt="Velocilector"></a>
+    @if(!extensionService.isRunningAsExtension()){
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
       aria-label="Toggle navigation">
@@ -15,5 +16,7 @@
         </li>
       </ul>
     </div>
+    }
+
   </div>
 </nav>
