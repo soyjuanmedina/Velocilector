@@ -59,12 +59,14 @@ export class ReadComponent implements OnInit {
       if ( !this.pause ) {
         await this.sleep( time );
         this.showedWord = split[i]
-        if ( this.showedWord.includes( '.' ) ) {
-          await this.sleep( time );
-        } else if ( this.showedWord.includes( ',' ) ||
-          this.showedWord.includes( ';' ) ||
-          this.showedWord.includes( ':' ) ) {
-          await this.sleep( time / 2 );
+        if ( this.readService.punctuationPauses ) {
+          if ( this.showedWord.includes( '.' ) ) {
+            await this.sleep( time + 150 );
+          } else if ( this.showedWord.includes( ',' ) ||
+            this.showedWord.includes( ';' ) ||
+            this.showedWord.includes( ':' ) ) {
+            await this.sleep( time );
+          }
         }
       } else {
         i = i - 1;

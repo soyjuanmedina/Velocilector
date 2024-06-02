@@ -2,7 +2,7 @@ export let testTexts = [
   {
     "title": "El otro yo",
     "author": "Mario Benedetti",
-    "text": `EL OTRO YO, un cuento de Mario Benedetti
+    "text": `EL OTRO YO, un cuento de Mario Benedetti.
 Se trataba de un muchacho corriente: en los pantalones se le formaban rodilleras, leía historietas, hacía ruido cuando comía, se metía los dedos a la nariz, roncaba en la siesta, se llamaba Armando Corriente en todo menos en una cosa: tenía Otro Yo.
 El Otro Yo usaba cierta poesía en la mirada, se enamoraba de las actrices, mentía cautelosamente , se emocionaba en los atardeceres. Al muchacho le preocupaba mucho su Otro Yo y le hacía sentirse incómodo frente a sus amigos. Por otra parte el Otro Yo era melancólico, y debido a ello, Armando no podía ser tan vulgar como era su deseo.
 Una tarde Armando llegó cansado del trabajo, se quitó los zapatos, movió lentamente los dedos de los pies y encendió la radio. En la radio estaba Mozart, pero el muchacho se durmió. Cuando despertó el Otro Yo lloraba con desconsuelo. En el primer momento, el muchacho no supo que hacer, pero después se rehizo e insultó concienzudamente al Otro Yo. Este no dijo nada, pero a la mañana siguiente se había suicidado.
