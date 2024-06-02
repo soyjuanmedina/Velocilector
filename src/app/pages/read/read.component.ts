@@ -59,6 +59,13 @@ export class ReadComponent implements OnInit {
       if ( !this.pause ) {
         await this.sleep( time );
         this.showedWord = split[i]
+        if ( this.showedWord.includes( '.' ) ) {
+          await this.sleep( time );
+        } else if ( this.showedWord.includes( ',' ) ||
+          this.showedWord.includes( ';' ) ||
+          this.showedWord.includes( ':' ) ) {
+          await this.sleep( time / 2 );
+        }
       } else {
         i = i - 1;
         await this.sleep( 100 );
@@ -66,7 +73,7 @@ export class ReadComponent implements OnInit {
     }
     const end = new Date();
     const segundos = ( end.getTime() - start.getTime() ) / 1000;
-    this.showedWord = "Se han reproducido " + split.length + " palabras en " + segundos + " milisegundos";
+    this.showedWord = "Has leído " + split.length + " palabras en " + segundos + " milisegundos";
   }
 
   sleep ( ms: number ) {

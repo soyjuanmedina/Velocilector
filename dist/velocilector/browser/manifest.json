@@ -17,27 +17,3 @@
     "default_popup": "index.html"
   }
 }
-/* {
-  "manifest_version": 3,
-  "name": "Velocilector Extension",
-  "description": "Aumenta tu velocidad de lectura",
-  "version": "1.0.0",
-  "action": {
-    "default_popup": "index.html"
-  },
-  "icons": {
-    "16": "assets/img/favicon.png",
-    "128": "assets/img/favicon.png"
-  },
-  "app": {
-    "background": {
-      "scripts": [
-        "background.js"
-      ],
-      "persistent": false
-    }
-  },
-  "permissions": [
-    "contextMenus"
-  ]
-} */
