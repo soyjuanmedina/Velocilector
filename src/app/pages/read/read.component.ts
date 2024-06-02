@@ -4,11 +4,12 @@ import { testTexts } from '../home/conf/test-text';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReadService } from '../../services/read.service';
+import { ReadConfigComponent } from '../../components/read-config/read-config.component';
 
 @Component( {
   selector: 'app-read',
   standalone: true,
-  imports: [FormsModule,
+  imports: [FormsModule, ReadConfigComponent,
     ReactiveFormsModule, CommonModule],
   templateUrl: './read.component.html',
   styleUrl: './read.component.scss'
@@ -60,16 +61,17 @@ export class ReadComponent implements OnInit {
         await this.sleep( time );
         this.showedWord = split[i]
         if ( this.readService.punctuationPauses ) {
-          if ( this.showedWord.includes( '.' ) ) {
+          if ( this.showedWord?.includes( '.' ) ) {
             await this.sleep( time + 150 );
-          } else if ( this.showedWord.includes( ',' ) ||
-            this.showedWord.includes( ';' ) ||
-            this.showedWord.includes( ':' ) ) {
+          } else if ( this.showedWord?.includes( ',' ) ||
+            this.showedWord?.includes( ';' ) ||
+            this.showedWord?.includes( ':' ) ) {
             await this.sleep( time );
           }
         }
       } else {
         i = i - 1;
+        time = 60 / this.readService.wpm * 1000;
         await this.sleep( 100 );
       }
     }

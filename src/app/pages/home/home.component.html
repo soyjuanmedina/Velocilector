@@ -1,27 +1,4 @@
-<div class="row">
-  <div class="col"><label for="wpm" class="form-label">Pálabras por minúto: </label>
-    <input type="range" class="form-range" [(ngModel)]="readService.wpm" min="60" max="2000"
-      id="wpm">
-    <div class="text-center">{{readService.wpm}}</div>
-  </div>
-  <div class="col"><label for="fontSize" class="form-label">Tamaño de texto:</label>
-    <input type="range" class="form-range" [(ngModel)]="readService.fontSize" min="2" max="10"
-      id="fontSize">
-    <div class="text-center">{{readService.fontSize}}</div>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <input class="form-check-input" type="checkbox" value="" id="punctuationPauses"
-      [(ngModel)]="readService.punctuationPauses">
-    <label class="form-check-label" for="punctuationPauses">
-      &nbsp; Pausa en puntuación
-    </label>
-  </div>
-</div>
-
-
-
+<app-read-config></app-read-config>
 
 <form [formGroup]="form">
 

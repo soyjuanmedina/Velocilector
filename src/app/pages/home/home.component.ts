@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ReadService } from '../../services/read.service';
 import { ExtensionService } from '../../services/extension.service';
+import { ReadConfigComponent } from '../../components/read-config/read-config.component';
 
 @Component( {
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule,
+  imports: [FormsModule, ReadConfigComponent,
     ReactiveFormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
