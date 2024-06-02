@@ -4,14 +4,19 @@
   "description": "Aumenta tu velocidad de lectura",
   "version": "1.0.0",
   "permissions": [
-    "contextMenus"
+    "sidePanel",
+    "contextMenus",
+    "storage"
   ],
   "icons": {
     "16": "assets/img/favicon.png",
     "128": "assets/img/favicon.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "service-worker.js"
+  },
+  "side_panel": {
+    "default_path": "index.html"
   },
   "action": {
     "default_popup": "index.html"

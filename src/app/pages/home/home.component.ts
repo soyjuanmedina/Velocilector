@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { testTexts } from './conf/test-text';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ReadService } from '../../services/read.service';
 import { ExtensionService } from '../../services/extension.service';
 import { ReadConfigComponent } from '../../components/read-config/read-config.component';
@@ -23,7 +23,12 @@ export class HomeComponent {
 
   testTexts = testTexts;
 
-  constructor ( public router: Router, public readService: ReadService, public extensionService: ExtensionService ) {
+  constructor ( public router: Router, private activatedRoute: ActivatedRoute, public readService: ReadService, public extensionService: ExtensionService ) {
+    this.activatedRoute.queryParams.subscribe( params => {
+      if ( params['selectionText'] ) {
+        this.form.controls['textToRead'].setValue( params['selectionText'] )
+      }
+    } );
     if ( this.readService.textToRead ) {
       this.form.controls['textToRead'].setValue( this.readService.textToRead );
     }
