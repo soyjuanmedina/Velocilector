@@ -24,7 +24,7 @@ export class HomeComponent {
   testTexts = testTexts;
 
   constructor ( public router: Router, private activatedRoute: ActivatedRoute, public readService: ReadService, public extensionService: ExtensionService ) {
-    let chromeStorage = chrome?.storage?.session.get( 'selectionText' );
+    let chromeStorage = chrome?.storage?.session?.get( 'selectionText' );
     if ( chromeStorage ) {
       this.form.controls['textToRead'].setValue( chromeStorage )
     }
