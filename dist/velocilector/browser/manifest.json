@@ -15,9 +15,6 @@
   "background": {
     "service_worker": "service-worker.js"
   },
-  "side_panel": {
-    "default_path": "index.html"
-  },
   "action": {
     "default_popup": "index.html"
   }

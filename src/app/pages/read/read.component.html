@@ -6,19 +6,28 @@
 
   <div class="row">
     <div class="col-sm">
-      <div class="d-flex flex-row-reverse">
-        <button (click)="pauseIt()" class="btn btn-primary m-3 btn-lg">
-          <i [ngClass]="pause ? 'bi bi-play-circle-fill' : 'bi-pause-btn-fill'"
-            [title]="pause ? 'Reproducir' : 'Pausar'"></i>
-        </button>
-
-      </div>
     </div>
   </div>
   <div class="modal-body centerScreen">
     <div class="text-center textBoxHeight mt-5" [style.font-size.vw]="readService.fontSize">
       {{showedWord}}</div>
+    <div class="text-center">
+      <span class="badge rounded-pill bg-primary me-1" *ngIf="pause"><i
+          class="bi bi-chevron-double-left" (click)="move(-5)"></i></span>
+      <span class="badge rounded-pill bg-primary me-1" *ngIf="pause"><i class="bi bi-chevron-left"
+          (click)="move(-1)"></i></span>
+      <button (click)="pauseIt()" class="btn btn-primary m-3 btn-lg">
+        <i [ngClass]="pause ? 'bi bi-play-circle-fill' : 'bi-pause-btn-fill'"
+          [title]="pause ? 'Reproducir' : 'Pausar'"></i>
+      </button>
+      <span class="badge rounded-pill bg-primary me-1" *ngIf="pause"><i class="bi bi-chevron-right"
+          (click)="move(1)"></i></span>
+      <span class="badge rounded-pill bg-primary me-1" *ngIf="pause"><i
+          class="bi bi-chevron-double-right" (click)="move(5)"></i></span>
+    </div>
   </div>
+
+
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
       (click)="return()">Volver</button>

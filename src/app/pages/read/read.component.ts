@@ -24,6 +24,7 @@ export class ReadComponent implements OnInit {
   pause: boolean = false;
   modalClosed: boolean = false;
   testTexts = testTexts;
+  steps: number = 0;
 
   constructor ( public router: Router, public readService: ReadService ) {
   }
@@ -59,6 +60,7 @@ export class ReadComponent implements OnInit {
       }
       if ( !this.pause ) {
         await this.sleep( time );
+        this.steps = i;
         this.showedWord = split[i]
         if ( this.readService.punctuationPauses ) {
           if ( this.showedWord?.includes( '.' ) ) {
@@ -70,7 +72,8 @@ export class ReadComponent implements OnInit {
           }
         }
       } else {
-        i = i - 1;
+        this.showedWord = split[i];
+        i = this.steps - 1;
         time = 60 / this.readService.wpm * 1000;
         await this.sleep( 100 );
       }
@@ -91,6 +94,10 @@ export class ReadComponent implements OnInit {
 
   pauseIt () {
     this.pause = !this.pause;
+  }
+
+  move ( steps: number ) {
+    this.steps = this.steps + steps;
   }
 
   closeModal () {
