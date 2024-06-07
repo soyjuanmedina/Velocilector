@@ -11,7 +11,7 @@ chrome.contextMenus.onClicked.addListener((data, tab) => {
   chrome.storage.session.set({ selectionText: data.selectionText });
 
   chrome.tabs.update({
-     url: "http://www.velocilector.com/?selectionText=" + data.selectionText
+     url: "http://www.velocilector.com/?selectionText=" + 'manolo'
 });
 });
 

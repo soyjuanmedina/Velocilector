@@ -26,6 +26,11 @@ export class HomeComponent {
   constructor ( public router: Router, private activatedRoute: ActivatedRoute, public readService: ReadService, public extensionService: ExtensionService ) {
     this.activatedRoute.queryParams.subscribe( params => {
       if ( params['selectionText'] ) {
+
+        let esto = chrome.storage.session.get( 'selectionText' );
+        console.log( "Value is " + esto );
+
+
         this.form.controls['textToRead'].setValue( params['selectionText'] )
       }
     } );
