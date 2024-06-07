@@ -24,10 +24,11 @@ export class HomeComponent {
   testTexts = testTexts;
 
   constructor ( public router: Router, private activatedRoute: ActivatedRoute, public readService: ReadService, public extensionService: ExtensionService ) {
-    let chromeStorage = chrome?.storage?.session?.get( 'selectionText' );
-    if ( chromeStorage ) {
-      this.form.controls['textToRead'].setValue( chromeStorage )
-    }
+    this.activatedRoute.queryParams.subscribe( params => {
+      if ( params['selectionText'] ) {
+        this.form.controls['textToRead'].setValue( params['selectionText'] )
+      }
+    } );
     if ( this.readService.textToRead ) {
       this.form.controls['textToRead'].setValue( this.readService.textToRead );
     }
