@@ -24,6 +24,13 @@ export class HomeComponent {
   testTexts = testTexts;
 
   constructor ( public router: Router, private activatedRoute: ActivatedRoute, public readService: ReadService, public extensionService: ExtensionService ) {
+
+    navigator.serviceWorker.addEventListener( 'message', event => {
+      console.log( 'even', event )
+    } );
+
+
+
     this.activatedRoute.queryParams.subscribe( params => {
       if ( params['selectionText'] ) {
         this.form.controls['textToRead'].setValue( params['selectionText'] )

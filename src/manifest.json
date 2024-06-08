@@ -4,7 +4,7 @@
   "description": "Aumenta tu velocidad de lectura",
   "version": "1.0.0",
   "permissions": [
-    "sidePanel",
+    "tabs",
     "contextMenus",
     "storage"
   ],
