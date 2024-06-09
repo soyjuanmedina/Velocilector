@@ -23,17 +23,16 @@ export class HomeComponent {
 
   testTexts = testTexts;
 
+  alert?: string;
+
   constructor ( public router: Router, private activatedRoute: ActivatedRoute, public readService: ReadService, public extensionService: ExtensionService ) {
-
-    navigator.serviceWorker.addEventListener( 'message', event => {
-      console.log( 'even', event )
-    } );
-
-
 
     this.activatedRoute.queryParams.subscribe( params => {
       if ( params['selectionText'] ) {
-        this.form.controls['textToRead'].setValue( params['selectionText'] )
+        this.readService.textToRead = params['selectionText']
+      }
+      if ( params['error'] ) {
+        this.alert = "Límite 6000 caracteres, al finalizar podrás cargar el resto del texto."
       }
     } );
     if ( this.readService.textToRead ) {

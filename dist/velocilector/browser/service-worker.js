@@ -1,3 +1,5 @@
+// import { read } from './background.js';
+
 chrome.runtime.onInstalled.addListener(function () {
   chrome.contextMenus.create({
       title: 'Leer con Velocilector',
@@ -6,19 +8,18 @@ chrome.runtime.onInstalled.addListener(function () {
     });
 });
 
-chrome.contextMenus.onClicked.addListener((data, tab) => {
+chrome.contextMenus.onClicked.addListener(async (data, tab) => {
   // Store the last word in chrome.storage.session.
-    chrome.storage.local.set( { selectionText: data.selectionText }, ()=>{
-    console.log('selectionText saved successfully') ;
-}) ;
+  chrome.storage.session.set({ selectionText: data.selectionText });
 
-chrome.storage.local.get( 'selectionText', (selectionText)=>{
-    console.log('selectionText geted successfully', selectionText) ;
-}) ;
+  console.log('.length', data.selectionText.length);
 
-  chrome.tabs.update({
+  data.selectionText = data.selectionText.substring(0,1000);
+
+
+  chrome.tabs.create({
      url: "http://www.velocilector.com/?selectionText=" + data.selectionText
-});
+  });
 });
 
 
