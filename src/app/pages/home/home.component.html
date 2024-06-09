@@ -11,7 +11,8 @@
 
   <div class=" mb-3 text-center mt-5">
     <label for="textToRead" class="form-label">Texto</label>
-    <textarea class="form-control" id="textToRead" rows="10"
+    <textarea class="form-control" id="textToRead" placeholder="Copie aquí el texto que quiera leer"
+      [rows]="extensionService.isRunningAsExtension() ? 5 : 10"
       formControlName="textToRead"></textarea>
     <button type="button" class="btn btn-primary mt-2" (click)="read()">Velocileer</button>
   </div>

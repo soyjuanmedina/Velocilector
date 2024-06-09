@@ -25,6 +25,8 @@ export class ReadComponent implements OnInit {
   modalClosed: boolean = false;
   testTexts = testTexts;
   steps: number = 0;
+  isFinished: boolean = false;
+  textLength: number = 0;
 
   constructor ( public router: Router, public readService: ReadService ) {
   }
@@ -42,7 +44,8 @@ export class ReadComponent implements OnInit {
     if ( !text ) {
       this.showedWord = "Por favor, introduce el texto que quieras leer en el cuadro de texto";
     } else {
-      const split = text.split( ' ' )
+      const split = text.split( ' ' );
+      this.textLength = split.length;
       let time = 60 / this.readService.wpm * 1000
       this.playRsvp( split, time );
     }
@@ -50,6 +53,7 @@ export class ReadComponent implements OnInit {
   }
 
   async playRsvp ( split: string[], time: number ) {
+    this.isFinished = false;
     this.pause = false;
     this.modalClosed = false;
     const start = new Date();
@@ -79,6 +83,7 @@ export class ReadComponent implements OnInit {
       }
     }
     const end = new Date();
+    this.isFinished = true;
     const segundos = ( end.getTime() - start.getTime() ) / 1000;
     this.showedWord = "Has leído " + split.length + " palabras en " + segundos + " milisegundos";
   }
