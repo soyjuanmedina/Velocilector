@@ -15,6 +15,23 @@ Al principio la muerte del Otro Yo fue un rudo golpe para el pobre Armando, pero
 Sólo llevaba cinco días de luto, cuando salió la calle con el propósito de lucir su nueva y completa vulgaridad. Desde lejos vio que se acercaban sus amigos. Eso le llenó de felicidad e inmediatamente estalló en risotadas. Sin embargo, cuando pasaron junto a él, ellos no notaron su presencia. Para peor de males, el muchacho alcanzó a escuchar que comentaban: «Pobre Armando. Y pensar que parecía tan fuerte y saludable».
 El muchacho no tuvo más remedio que dejar de reír y, al mismo tiempo, sintió a la altura del esternón un ahogo que se parecía bastante a la nostalgia. Pero no pudo sentir auténtica melancolía, porque toda la melancolía se la había llevado el Otro Yo.
   `},
+  {
+    "title": "El elefante encadenado",
+    "author": "Jorge Bucay",
+    "words": 432,
+    "text": `
+Cuando yo era chico me encantaban los circos, y lo que más me gustaba de los circos eran los animales. También a mí como a otros, después me enteré, me llamaba la atención el elefante.
+
+Durante la función, la enorme bestia hacía despliegue de su peso, tamaño y fuerza descomunal… pero después de su actuación y hasta un rato antes de volver al escenario, el elefante quedaba sujeto solamente por una cadena que aprisionaba una de sus patas a una pequeña estaca clavada en el suelo. Sin embargo, la estaca era sólo un minúsculo pedazo de madera apenas enterrado unos centímetros en la tierra.
+
+Y aunque la cadena era gruesa y poderosa me parecía obvio que ese animal capaz de arrancar un árbol de cuajo con su propia fuerza podría, con facilidad, arrancar la estaca y huir. El misterio es evidente: ¿Qué lo mantiene entonces? ¿Por qué no huye?
+
+Cuanto tenía cinco o seis años, yo todavía confiaba en la sabiduría de los grandes. Pregunté entonces a algún maestro, a algún padre o a algún tío por el misterio del elefante. Alguno de ellos me explicó que el elefante no se escapa porque estaba amaestrado. Hice entonces la pregunta obvia... si está amaestrado, ¿por qué lo encadenan? No recuerdo haber recibido ninguna respuesta coherente.
+
+Con el tiempo me olvidé del misterio del elefante y la estaca… y sólo lo recordaba cuando me encontraba con otros que también se habían hecho la misma pregunta. Hace algunos años descubrí que por suerte para mí alguien había sido lo bastante sabio para encontrar la respuesta: el elefante del circo no escapa porque ha estado a unido a una estaca parecida desde que era muy, muy pequeño. Cerré los ojos y me imaginé al pequeño recién nacido sujeto a la estaca. Estoy seguro de que en aquel momento el elefantito empujó, tiró, sudó, tratando de soltarse. Y a pesar de todo su esfuerzo, no pudo.
+
+La estaca era ciertamente muy fuerte para él. Juraría que se durmió agotado, y que al día siguiente volvió a probar, y también al otro y al que le seguía… Hasta que un día, un terrible día para su historia, el animal aceptó su impotencia y se resignó a su destino. Este elefante enorme y poderoso, que vemos en el circo, no se escapa porque cree -pobre- que no puede. Él tiene registro y recuerdo de su impotencia, de aquella impotencia que sintió poco después de nacer. Y lo peor es que jamás se ha vuelto a cuestionar seriamente ese registro. Jamás… jamás… intentó poner a prueba su fuerza otra vez…
+  `},
 
   {
     "title": "Vuelva usted mañana",

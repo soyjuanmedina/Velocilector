@@ -27,6 +27,7 @@ export class ReadComponent implements OnInit {
   steps: number = 0;
   isFinished: boolean = false;
   textLength: number = 0;
+  wpm?: number;
 
   constructor ( public router: Router, public readService: ReadService ) {
   }
@@ -57,7 +58,7 @@ export class ReadComponent implements OnInit {
     this.pause = false;
     this.modalClosed = false;
     const start = new Date();
-    await this.sleep( 1000 );
+    // await this.sleep( 1000 );
     for ( let i = 0; i <= split.length; i++ ) {
       if ( this.modalClosed ) {
         break;
@@ -84,8 +85,10 @@ export class ReadComponent implements OnInit {
     }
     const end = new Date();
     this.isFinished = true;
-    const segundos = ( end.getTime() - start.getTime() ) / 1000;
-    this.showedWord = "Has leído " + split.length + " palabras en " + segundos + " milisegundos";
+    const readingSeconds = ( end.getTime() - start.getTime() ) / 1000;
+    let words = split.length;
+    this.wpm = Math.floor( ( words * 60 ) / readingSeconds )
+    this.showedWord = "Con velocilector has leído a una velocidad de " + this.wpm + " palabras por minuto";
   }
 
   sleep ( ms: number ) {

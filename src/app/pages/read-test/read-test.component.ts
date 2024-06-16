@@ -21,6 +21,7 @@ export class ReadTestComponent implements OnInit {
   startTime: Date = new Date();
   endTime: Date = new Date();
   readingSeconds?: number;
+  wpm?: number;
 
   constructor ( public router: Router, public readService: ReadService ) {
   }
@@ -36,6 +37,8 @@ export class ReadTestComponent implements OnInit {
     this.endReading = true;
     this.endTime = new Date();
     this.readingSeconds = ( this.endTime.getTime() - this.startTime.getTime() ) / 1000;
+    let words = this.readService.testText?.words || 0
+    this.wpm = Math.floor( ( words * 60 ) / this.readingSeconds )
   }
 
   reStart () {
@@ -54,4 +57,9 @@ export class ReadTestComponent implements OnInit {
     this.readService.testText = testTexts[index];
     this.router.navigate( ['/read-test'], { skipLocationChange: true } );
   }
+
+  return () {
+    this.router.navigate( ['/'], { skipLocationChange: true } );
+  }
+
 }
