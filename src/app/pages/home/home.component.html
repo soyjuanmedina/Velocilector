@@ -15,13 +15,23 @@
       [rows]="extensionService.isRunningAsExtension() ? 5 : 10"
       formControlName="textToRead"></textarea>
     <button type="button" class="btn btn-primary mt-2" (click)="read()">Velocileer</button>
+    @if(extensionService.isRunningAsExtension()){
+    <br>
+    <a href="https://velocilector.com/" target="_blank" class="mt-1">
+      <span type="button" class="badge bg-primary">Ir a la web de Velocilector
+        <i class="bi bi-arrow-up-right-square"></i>
+      </span>
+    </a>
+    }
   </div>
 
   @if(!extensionService.isRunningAsExtension()){
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
       data-bs-target="#testTextModal">Cargar texto</button>
-  </div>}
+  </div>
+  }
+
 </form>
 
 <!-- Modal de textos de ejemplo-->
