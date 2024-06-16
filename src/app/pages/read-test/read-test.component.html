@@ -1,0 +1,54 @@
+@if(!readService.testText){
+<p class="text-center">
+  Para comenzar su test de velocidad de lectura seleccione un texto
+</p>
+<p class="text-center">
+  <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+    data-bs-target="#testTextModal">Seleccionar texto</button>
+</p>
+} @else{
+@if(!startReading){
+<div class="alert alert-success" role="alert">
+  El test de lectura muestra el texto seleccionado al pulsar sobre el botón de 'Comenzar'. Cuando lo
+  haga comience a leer como lo haría normalmente.
+  Al finalizar pulse el botón que 'Terminar' que encontra al final del texto y calcularemos su
+  velocidad de lectura.
+</div>
+
+
+<p class="text-center">
+  <button type="button" class="btn btn-primary" (click)="startReadingFunction()">Comenzar</button>
+  <br>
+  <button type="button" class="btn btn-secondary btn-sm mt-1" data-bs-toggle="modal"
+    data-bs-target="#testTextModal">Seleccionar otro texto</button>
+</p>
+}@else {
+<p class="text-center">
+  <b>{{readService.testText?.title}} <br> de {{readService.testText?.author}}</b>
+</p>
+
+<div style="white-space: pre-wrap;">
+  {{readService.testText?.text}}
+</div>
+
+@if(!endReading){
+<p class="text-center">
+  <button type="button" class="btn btn-primary" (click)="endReadingFunction()">Terminar</button>
+</p>
+} @else{
+
+<p class="text-center fw-bold">
+  Has leído {{readService.testText.words}} palabras en {{readingSeconds}} segundos
+</p>
+<p class="text-center">
+  <button type="button" class="btn btn-primary" (click)="reStart()">Volver a comenzar</button>
+</p>
+}
+
+}
+}
+
+
+<!-- Modal de textos de ejemplo-->
+<selection-modal-component (emittTestTextToLoad)="loadTestText($event)"
+  (emittTextToReadTest)="readTest($event)"></selection-modal-component>

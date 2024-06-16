@@ -20,33 +20,10 @@
   @if(!extensionService.isRunningAsExtension()){
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
-      data-bs-target="#testTextModal">Cargar texto de
-      prueba</button>
+      data-bs-target="#testTextModal">Cargar texto</button>
   </div>}
 </form>
 
 <!-- Modal de textos de ejemplo-->
-<div class="modal fade" id="testTextModal" tabindex="-1" aria-labelledby="testTextModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="testTextModalLabel">Seleccione un texto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-
-        <ul class="list-group">
-          @for (testText of testTexts; track testText; let index = $index) {
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{testText.title}} de {{testText.author}} <br>({{testText.words}} palabras)
-            <span role='button' class="badge text-bg-primary rounded-pill"
-              (click)="loadTestText(index)" data-bs-dismiss="modal">Cargar</span>
-          </li>
-          }
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<selection-modal-component (emittTestTextToLoad)="loadTestText($event)"
+  (emittTextToReadTest)="readTest($event)"></selection-modal-component>

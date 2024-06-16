@@ -1,0 +1,31 @@
+<div class="modal fade" id="testTextModal" tabindex="-1" aria-labelledby="testTextModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="testTextModalLabel">Seleccione un texto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">
+          @for (testText of testTexts; track testText; let index = $index) {
+          <div class="row">
+            <p>{{testText.title}} de {{testText.author}} ({{testText.words}} palabras)<br></p>
+
+            <h6>
+              <span role='button' class="badge text-bg-primary rounded-pill"
+                (click)="loadTestText(index)" data-bs-dismiss="modal">Cargar en Velocilector</span>
+              <span role='button' class="badge text-bg-primary rounded-pill ms-2"
+                (click)="readTest(index)" data-bs-dismiss="modal">Test
+                velocidad de lectura</span>
+            </h6>
+          </div>
+
+          <hr>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -92,11 +92,6 @@ export class ReadComponent implements OnInit {
     return new Promise( resolve => setTimeout( resolve, ms ) );
   }
 
-  loadTestText ( index: number ) {
-    this.form.controls['textToRead'].setValue( testTexts[index].text )
-
-  }
-
   pauseIt () {
     this.pause = !this.pause;
   }

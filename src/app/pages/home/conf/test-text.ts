@@ -5,11 +5,10 @@ export let testTexts: TestText[] = [
     "title": "El otro yo",
     "author": "Mario Benedetti",
     "words": 330,
-    "text": `EL OTRO YO, un cuento de Mario Benedetti.
+    "text": `
 Se trataba de un muchacho corriente: en los pantalones se le formaban rodilleras, leía historietas, hacía ruido cuando comía, se metía los dedos a la nariz, roncaba en la siesta, se llamaba Armando Corriente en todo menos en una cosa: tenía Otro Yo.
 El Otro Yo usaba cierta poesía en la mirada, se enamoraba de las actrices, mentía cautelosamente , se emocionaba en los atardeceres. Al muchacho le preocupaba mucho su Otro Yo y le hacía sentirse incómodo frente a sus amigos. Por otra parte el Otro Yo era melancólico, y debido a ello, Armando no podía ser tan vulgar como era su deseo.
 Una tarde Armando llegó cansado del trabajo, se quitó los zapatos, movió lentamente los dedos de los pies y encendió la radio. En la radio estaba Mozart, pero el muchacho se durmió. Cuando despertó el Otro Yo lloraba con desconsuelo. En el primer momento, el muchacho no supo que hacer, pero después se rehizo e insultó concienzudamente al Otro Yo. Este no dijo nada, pero a la mañana siguiente se había suicidado.
-
 
 Al principio la muerte del Otro Yo fue un rudo golpe para el pobre Armando, pero enseguida pensó que ahora sí podría ser enteramente vulgar. Ese pensamiento lo reconfortó.
 
@@ -22,7 +21,7 @@ El muchacho no tuvo más remedio que dejar de reír y, al mismo tiempo, sintió 
     "author": "Mariano José de Larra",
     "words": 3371,
     "text":
-      `Vuelva usted mañana por Mariano José de Larra.
+      `
 Gran persona debió de ser el primero que llamó pecado mortal a la pereza; nosotros, que ya en uno de nuestros artículos anteriores estuvimos más serios de lo que nunca nos habíamos propuesto, no entraremos ahora en largas y profundas investigaciones acerca de la historia de este pecado, por más que conozcamos que hay pecados que pican en historia, y que la historia de los pecados sería un tanto cuanto divertida. Convengamos solamente en que esta institución ha cerrado y cerrará las puertas del cielo a más de un cristiano.
 
 Estas reflexiones hacía yo casualmente no hace muchos días, cuando se presentó en mi casa un extranjero de estos que, en buena o en mala parte, han de tener siempre de nuestro país una idea exagerada e hiperbólica, de estos que, o creen que los hombres aquí son todavía los espléndidos, francos, generosos y caballerescos seres de hace dos siglos, o que son aún las tribus nómadas del otro lado del Atlante: en el primer caso vienen imaginando que nuestro carácter se conserva intacto como nuestra ruina; en el segundo vienen temblando por esos caminos, y pregunta si son los ladrones que los han de despojar los individuos de algún cuerpo de guardia establecido precisamente para defenderlos de los azares de un camino, comunes a todos los países.

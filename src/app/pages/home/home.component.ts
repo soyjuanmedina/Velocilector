@@ -6,12 +6,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ReadService } from '../../services/read.service';
 import { ExtensionService } from '../../services/extension.service';
 import { ReadConfigComponent } from '../../components/read-config/read-config.component';
+import { TestText } from '../../services/models/test-text';
+import { SelectionModalComponent } from '../../components/selection-modal/selection-modal.component';
 
 @Component( {
   selector: 'app-home',
   standalone: true,
   imports: [FormsModule, ReadConfigComponent,
-    ReactiveFormsModule, CommonModule],
+    ReactiveFormsModule, CommonModule, SelectionModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 } )
@@ -21,7 +23,7 @@ export class HomeComponent {
     textToRead: new FormControl( '' ),
   } );
 
-  testTexts = testTexts;
+  testTexts: TestText[] = testTexts;
 
   alert?: string;
 
@@ -46,8 +48,13 @@ export class HomeComponent {
   }
 
   loadTestText ( index: number ) {
-    this.form.controls['textToRead'].setValue( testTexts[index].text )
-
+    this.form.controls['textToRead'].setValue( testTexts[index].title + ', de ' + testTexts[index].author + '.' + testTexts[index].text )
   }
+
+  readTest ( index: number ) {
+    this.readService.testText = testTexts[index];
+    this.router.navigate( ['/read-test'], { skipLocationChange: true } );
+  }
+
 
 }
